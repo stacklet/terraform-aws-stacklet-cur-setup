@@ -67,8 +67,20 @@ No modules.
 
 ```hcl
 module "cur-setup" {
-  source = "github.com/stacklet/terraform-aws-stacklet-cur-setup"
-  customer_prefix = ""
+  source  = "stacklet/stacklet-cur-setup/aws"
+  version = "0.1.0"
+
+  customer_prefix          = ""
   stacklet_saas_account_id = ""
 }
 ```
+
+## Versioning
+
+This module is published to the [Terraform Registry](https://registry.terraform.io/modules/stacklet/stacklet-cur-setup/aws).
+Set `source` to the registry address and pin `version` to a release.
+
+`version` takes the usual constraint syntax. This module is pre-1.0, and on a
+0.x line a minor release is where it ships breaking changes, so pin at the
+patch level: `~> 0.1.0` accepts `0.1.1` and later patches and holds at `0.2.0`.
+Read the release notes before moving to a new minor.
